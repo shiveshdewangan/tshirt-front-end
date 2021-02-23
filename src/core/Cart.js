@@ -9,7 +9,7 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [reload, setReload] = useState(false);
 
-  const loadAllProducts = () => {
+  const loadAllProducts = (products) => {
     return (
       <div>
         <h2>Products in Cart</h2>
@@ -43,8 +43,8 @@ const Cart = () => {
   return (
     <Base title="Cart Page" description="Ready to checkout">
       <div className="row text-center">
-        <div className="col-6">{loadAllProducts()}</div>
-        <div className="col-6">
+        <div className="col-md-6">{loadAllProducts(products)}</div>
+        <div className="col-md-6">
           <StripeCheckout products={products} setReload={setReload} />
         </div>
       </div>
