@@ -45,7 +45,9 @@ const Cart = () => {
       <div className="row text-center">
         <div className="col-md-6">{loadAllProducts(products)}</div>
         <div className="col-md-6">
-          <StripeCheckout products={products} setReload={setReload} />
+          {products && (
+            <StripeCheckout products={products} setReload={setReload} />
+          )}
         </div>
       </div>
     </Base>
