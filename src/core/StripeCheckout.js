@@ -42,7 +42,10 @@ const StripeCheckout = ({
       headers,
       body: JSON.stringify(body),
     })
-      .then((response) => console.log(response))
+      .then((response) => {
+        cartEmpty();
+        console.log(response);
+      })
       .catch((err) => console.log(err));
   };
 
